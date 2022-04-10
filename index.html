@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="resources/style.css">
+        <title>Calendar</title>
+    </head>
+<body id="body">
+    <section class="calendar">
+        <form class="form-inline">
+
+            <select class="form-control col-sm-2" name="month" id="dropdownMenu1">
+                <option value=0>Jan</option>
+                <option value=1>Feb</option>
+                <option value=2>Mar</option>
+                <option value=3>Apr</option>
+                <option value=4>May</option>
+                <option value=5>Jun</option>
+                <option value=6>Jul</option>
+                <option value=7>Aug</option>
+                <option value=8>Sep</option>
+                <option value=9>Oct</option>
+                <option value=10>Nov</option>
+                <option value=11>Dec</option>
+            </select>
+
+            <label for="year"></label>
+            <select class="form-control col-sm-2" name="year" id="dropdownMenu2">
+                <option value=1990>1990</option>
+                <option value=1991>1991</option>
+                <option value=1992>1992</option>
+                <option value=1993>1993</option>
+                <option value=1994>1994</option>
+                <option value=1995>1995</option>
+                <option value=1996>1996</option>
+                <option value=1997>1997</option>
+                <option value=1998>1998</option>
+                <option value=1999>1999</option>
+                <option value=2000>2000</option>
+                <option value=2001>2001</option>
+                <option value=2002>2002</option>
+                <option value=2003>2003</option>
+                <option value=2004>2004</option>
+                <option value=2005>2005</option>
+                <option value=2006>2006</option>
+                <option value=2007>2007</option>
+                <option value=2008>2008</option>
+                <option value=2009>2009</option>
+                <option value=2010>2010</option>
+                <option value=2011>2011</option>
+                <option value=2012>2012</option>
+                <option value=2013>2013</option>
+                <option value=2014>2014</option>
+                <option value=2015>2015</option>
+                <option value=2016>2016</option>
+                <option value=2017>2017</option>
+                <option value=2018>2018</option>
+                <option value=2019>2019</option>
+                <option value=2020>2020</option>
+                <option value=2021>2021</option>
+                <option value=2022>2022</option>
+                <option value=2023>2023</option>
+                <option value=2024>2024</option>
+                <option value=2025>2025</option>
+                <option value=2026>2026</option>
+                <option value=2027>2027</option>
+                <option value=2028>2028</option>
+                <option value=2029>2029</option>
+                <option value=2030>2030</option>
+            </select>
+        </form>
+
+        <table class="table table-bordered table-responsive-sm">
+            <thead>
+                <tr class="head-cal">
+                    <th colspan="6" id="currentMonthYear"></th>
+                    <th id="previousNext">
+                        <img id="previous" src="resources/prev.png">
+                        <img id="next" src="resources/next.png">
+                    </th>
+                </tr>
+                <tr class="week-days">
+                    <th class="col-md-1">Sun</th>
+                    <th class="col-md-1">Mon</th>
+                    <th class="col-md-1">Tue</th>
+                    <th class="col-md-1">Wed</th>
+                    <th class="col-md-1">Thu</th>
+                    <th class="col-md-1">Fri</th>
+                    <th class="col-md-1">Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+            </tbody>
+        </table>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="add-event" data-toggle="modal" data-target="#exampleModal">Add event</button>
+  
+        <!-- Modal Add Event-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span id="close-1" aria-hidden="true">&times;</span>
+                </button> 
+                </div>
+                <div class="modal-body">
+                    <div class="md-form my-5">
+                        <label for="inputMDEx1">Event time *</label>
+                        <input type="time" id="inputMDEx1" class="form-control">
+                        <p id="time-helper">Type in the following format: HH:mm AM/PM</p>
+                    </div>
+                    <div class="form-check" id="recur-form">
+                        <input class="form-check-input" type="checkbox" value="" id="recurEvent">
+                        <label class="form-check-label" for="recurEvent">
+                          Recurring event?
+                        </label>
+                    </div>
+                    <div id="recur-types">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Every day
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Every week
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                              Every month
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Event description *</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button id="close-2" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="saveChanges" type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal Delete Event -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalTitle">Delete event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span id="close-1" aria-hidden="true">&times;</span>
+                </button> 
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p>Are you sure you want to delete this event?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button id="close-2" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="deleteEvent" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Event List -->
+        <div id="events-list-box">
+            <h4 id="events-title"></h4>
+            <ul id="listBox" class="list-group">
+            </ul>
+        </div>
+
+    </section>
+    <script src="resources/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+</body>
+</html>

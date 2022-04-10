@@ -1,0 +1,144 @@
+
+.calendar {
+    position: relative;
+    width: 90%;
+    margin: 2% auto;
+}
+
+td {
+    height: 4.5rem;
+}
+
+.head-cal {
+    background-color: #F7F7F7;
+    font-size: 1.7rem;
+}
+
+.week-days {
+    font-size: 1.1rem;
+}
+
+.nav-cal-parent {
+    width: 97%;
+    margin: 0 auto;
+}
+
+.nav-cal {
+    height: 2.3rem;
+    border: 0.5px solid #5E48F6;
+    color: #5E48F6;
+    background-color: white;
+}
+
+
+.form-inline {
+    margin-bottom: 20px;
+}
+
+#dropdownMenu1, #dropdownMenu2 {
+    font-size: 1rem;
+    width: 10px;
+    /* width: 8rem; */
+}
+
+.bi {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1175px){
+    .bi {
+        width: 20px;
+        height: 20px;
+        margin-left: 0.5em;
+        margin-top: 4px;
+    }
+    #previousNext {
+        font-size: 1.5rem;
+    }
+    .week-days{
+        font-size: 0.9rem;
+    }
+    
+}
+
+.bi:hover {
+    cursor: pointer;
+}
+
+td:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+#previousNext {
+    border-left: hidden;
+    cursor: pointer;
+}
+
+#previous {
+    width: 1.45em;
+    margin-left: 0.8em;
+    margin-right: 1em;
+}
+
+#next {
+    width: 1.2em;
+}
+
+#add-event {
+    display: none;
+}
+
+#events-list-box {
+    margin-top: 1.5em;
+}
+
+.dot {
+    display: flex;
+    height: 4px;
+    width: 4px;
+    margin: 0 2px;
+    border-radius: 4px;
+    background-color: red;
+}
+
+#events-list-box {
+    margin-left: 5px;
+}
+
+#listBox {
+    margin-top: 1.2rem;
+}
+
+.edit, .delete {
+    margin-left: 0.7rem;
+}
+
+.red-border {
+    border: 1px red solid;
+}
+
+#time-helper {
+    font-size: 0.8em;
+    color: darkgray;
+
+}
+
+#recur-form {
+    margin-bottom: 1rem;
+}
+
+#recur-types {
+    width: 90%;
+    display: none;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    
+}
+
+tr {
+    display: table-row;
+}
