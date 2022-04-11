@@ -100,6 +100,12 @@ td:hover {
     background-color: lightgrey;
 }
 
+#prevNextCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 #previousNext {
     border-left: hidden;
     cursor: pointer;
