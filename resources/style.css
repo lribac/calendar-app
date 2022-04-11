@@ -33,39 +33,66 @@ td {
 
 .form-inline {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 #dropdownMenu1, #dropdownMenu2 {
     font-size: 1rem;
-    width: 10px;
-    /* width: 8rem; */
-}
-
-.bi {
-    width: 30px;
-    height: 30px;
-    margin-left: 30px;
-    margin-top: 10px;
+    width: 13rem;
+    margin-right: 0.3rem;
 }
 
 @media screen and (max-width: 1175px){
-    .bi {
-        width: 20px;
-        height: 20px;
-        margin-left: 0.5em;
-        margin-top: 4px;
-    }
     #previousNext {
         font-size: 1.5rem;
+        margin-left: 5.5em;
     }
     .week-days{
         font-size: 0.9rem;
     }
+    #previous {
+        width: 1.5rem;
+    }
+    #next {
+        width: 1.5rem;
+    }
+    .edit {
+        width: 3rem;
+        font-size: 0.8rem;
+    }
+    .delete {
+        margin-top: 2px;
+        width: 4.2rem;
+        font-size: 0.8rem;
+    }
     
 }
 
-.bi:hover {
-    cursor: pointer;
+@media screen and (max-width: 500px){
+    #previousNext {
+        font-size: 0.8rem;
+    }
+    #currentMonthYear{
+        font-size: 0.7em;
+    }
+    #previous {
+        width: 1.5rem;
+    }
+    #next {
+        width: 1.5rem;
+    }
+    .edit {
+        width: 3rem;
+        font-size: 0.8rem;
+    }
+    .delete {
+        margin-top: 2px;
+        width: 4.2rem;
+        font-size: 0.8rem;
+    }
+    
+    
 }
 
 td:hover {
@@ -79,17 +106,13 @@ td:hover {
 }
 
 #previous {
-    width: 1.45em;
     margin-left: 0.8em;
     margin-right: 1em;
 }
 
-#next {
-    width: 1.2em;
-}
-
 #add-event {
     display: none;
+    width: 100%;
 }
 
 #events-list-box {

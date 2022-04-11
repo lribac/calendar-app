@@ -6,8 +6,6 @@ let previousNextContainer = document.getElementById("previousNext");
 let previousButton = document.getElementById("previous");
 let nextButton = document.getElementById("next");
 let addEvent = document.getElementById("add-event");
-let closeIcon = document.getElementById("close-1");
-let closeButton = document.getElementById("close-2");
 let saveChanges = document.getElementById("saveChanges");
 let addEventTitle = document.getElementById("exampleModalLabel");
 let eventsContainer = document.getElementById("events-list-box");
@@ -473,8 +471,8 @@ function getEvents() {
 // Change colspan of first title table row
 const mediaQuery = window.matchMedia('(max-width: 800px)')
 if (mediaQuery.matches) {
-    monthAndYear.colSpan = "4";
-    previousNextContainer.colSpan= "3";
+    monthAndYear.colSpan = "5";
+    previousNextContainer.colSpan= "2";
 }
 
 // Delete event on clicking Delete button
